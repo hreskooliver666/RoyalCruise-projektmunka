@@ -2,6 +2,7 @@
 package com.royalcruise.backend.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.royalcruise.backend.CruiseDataService;
 import com.royalcruise.backend.model.Cabin;
 import com.royalcruise.backend.model.RouteItem;
 import com.royalcruise.backend.repository.CabinRepository;

@@ -2,8 +2,8 @@
 package com.royalcruise.backend.controller;
 
 import com.royalcruise.backend.model.*;
-import com.royalcruise.backend.service.AuthService;
-import com.royalcruise.backend.service.BookingService;
+import com.royalcruise.backend.AuthService;
+import com.royalcruise.backend.BookingService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

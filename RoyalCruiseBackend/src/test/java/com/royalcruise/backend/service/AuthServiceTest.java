@@ -1,6 +1,8 @@
 /** Ez a Java fájl a backendhez kapcsolódó logikát és viselkedést tartalmazza. */
 package com.royalcruise.backend.service;
 
+import com.royalcruise.backend.AuthService;
+import com.royalcruise.backend.JwtService;
 import com.royalcruise.backend.model.RegisterRequest;
 import com.royalcruise.backend.model.Role;
 import com.royalcruise.backend.model.UserAccount;
@@ -17,7 +19,6 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 /**

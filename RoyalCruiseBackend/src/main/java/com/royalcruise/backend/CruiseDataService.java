@@ -1,5 +1,5 @@
 /** Ez a Java fájl a backendhez kapcsolódó logikát és viselkedést tartalmazza. */
-package com.royalcruise.backend.service;
+package com.royalcruise.backend;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

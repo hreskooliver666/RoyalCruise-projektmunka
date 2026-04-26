@@ -2,7 +2,7 @@
 package com.royalcruise.backend.controller;
 
 import com.royalcruise.backend.model.Cabin;
-import com.royalcruise.backend.service.CruiseDataService;
+import com.royalcruise.backend.CruiseDataService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
 /** Ez a Java fájl a backendhez kapcsolódó logikát és viselkedést tartalmazza. */
 package com.royalcruise.backend.config;
 
-import com.royalcruise.backend.service.AuthService;
+import com.royalcruise.backend.AuthService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
