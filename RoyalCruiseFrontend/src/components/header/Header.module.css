@@ -1,0 +1,253 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.container {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Hamburger ikon a jobb szélen */
+.hamburger {
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-left: 0.7rem;
+  position: relative;
+  z-index: 4;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #cbd5f5; /* világos kékes-fehér, illik a nav linkekhez */
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Animáció nyitáskor */
+.hamburger span.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger span.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger span.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Lenyíló menü */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  animation: fadeIn 0.2s ease;
+  z-index: 999;
+  max-width: 120px;
+}
+
+.dropdown button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dropdown button::after {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 0.35rem;
+  height: 2px;
+  width: 0;
+  background: currentColor;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.dropdown button:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.dropdown button:hover::after,
+.dropdown button:focus-visible::after {
+  width: calc(100% - 2.4rem);
+}
+
+.logoutMenuItem {
+  margin-top: 0.3rem;
+  border-top: 1px solid #1e293b !important;
+  padding-top: 0.9rem !important;
+  color: #fca5a5 !important;
+}
+
+.logoutMenuItem:hover {
+  background: #3f1d1d !important;
+  color: #fecaca !important;
+}
+
+.mobilePrimaryMenuItem {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+  min-width: 0;
+  margin-left: auto;
+  gap: 0.55rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.6rem;
+  min-width: 0;
+  margin-left: auto;
+  max-width: 100%;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.18rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.08rem;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.link:hover::after,
+.link:focus-visible::after {
+  width: 100%;
+}
+
+.homeLink {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.homeLink:hover {
+  color: #0ea5e9;
+}
+
+.linkActive {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.linkActive:hover {
+  color: #0ea5e9;
+}
+
+.linkActive::after {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .nav {
+    gap: 1rem;
+  }
+
+  .link,
+  .linkActive {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .inner {
+    width: auto;
+    min-width: 0;
+    margin-left: auto;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .link,
+  .linkActive {
+    white-space: nowrap;
+    font-size: 0.84rem;
+  }
+
+  .mobilePrimaryMenuItem {
+    display: block !important;
+  }
+
+  .hamburger {
+    width: 24px;
+    height: 20px;
+    margin-left: 0.45rem;
+    flex-shrink: 0;
+    padding: 0.2rem;
+    background: rgba(2, 6, 23, 0.72);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 0.45rem;
+  }
+
+  .hamburger span.open:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger span.open:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .dropdown {
+    right: 10px;
+    top: 56px;
+    min-width: 155px;
+    max-width: 80vw;
+  }
+
+  .dropdown button {
+    padding: 0.72rem 0.95rem;
+    font-size: 0.84rem;
+  }
+}

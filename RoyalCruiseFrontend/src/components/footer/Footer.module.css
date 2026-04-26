@@ -1,0 +1,78 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.footer {
+  border-top: 1px solid #1f2937;
+  margin-top: 3rem;
+  padding: 2rem 1.5rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  background: #020617;
+}
+
+.column {
+  min-width: 180px;
+  text-align: center;
+}
+
+.column h4 {
+  margin: 0 0 0.6rem;
+  color: #e5e7eb;
+}
+
+.columnTitle {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.columnTitle:hover h4 {
+  color: #38bdf8;
+}
+
+.columnTitle h4 {
+  margin: 0 0 0.6rem;
+  color: #e5e7eb;
+}
+
+.column p {
+  margin: 0.1rem auto 0;
+  max-width: 220px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.link {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.copyrightRow {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.copyrightRow span:first-child {
+  color: #e5e7eb;
+  font-size: 1rem;
+  line-height: 1;
+}
