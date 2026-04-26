@@ -7,7 +7,7 @@ import com.royalcruise.backend.model.Role;
 import com.royalcruise.backend.model.UserAccount;
 import com.royalcruise.backend.repository.BookingRepository;
 import com.royalcruise.backend.repository.UserAccountRepository;
-import com.royalcruise.backend.BookingService;
+import com.royalcruise.backend.service.BookingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -1,5 +1,5 @@
 /** Ez a Java fájl a backendhez kapcsolódó logikát és viselkedést tartalmazza. */
-package com.royalcruise.backend;
+package com.royalcruise.backend.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

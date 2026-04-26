@@ -3,8 +3,8 @@ package com.royalcruise.backend.service.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.royalcruise.backend.model.*;
-import com.royalcruise.backend.AuthService;
-import com.royalcruise.backend.BookingService;
+import com.royalcruise.backend.service.AuthService;
+import com.royalcruise.backend.service.BookingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

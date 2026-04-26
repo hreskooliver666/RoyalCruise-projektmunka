@@ -5,7 +5,7 @@ import com.royalcruise.backend.model.Role;
 import com.royalcruise.backend.model.UserAccount;
 import com.royalcruise.backend.repository.BookingRepository;
 import com.royalcruise.backend.repository.UserAccountRepository;
-import com.royalcruise.backend.BookingService;
+import com.royalcruise.backend.service.BookingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

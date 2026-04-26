@@ -2,7 +2,7 @@
 package com.royalcruise.backend.service.controller;
 
 import com.royalcruise.backend.model.RouteItem;
-import com.royalcruise.backend.CruiseDataService;
+import com.royalcruise.backend.service.CruiseDataService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,6 @@
 /** Ez a Java fájl a backendhez kapcsolódó logikát és viselkedést tartalmazza. */
 package com.royalcruise.backend.service;
 
-import com.royalcruise.backend.JwtService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

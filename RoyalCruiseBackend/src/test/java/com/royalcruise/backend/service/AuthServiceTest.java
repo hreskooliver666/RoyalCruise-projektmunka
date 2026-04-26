@@ -1,8 +1,6 @@
 /** Ez a Java fájl a backendhez kapcsolódó logikát és viselkedést tartalmazza. */
 package com.royalcruise.backend.service;
 
-import com.royalcruise.backend.AuthService;
-import com.royalcruise.backend.JwtService;
 import com.royalcruise.backend.model.RegisterRequest;
 import com.royalcruise.backend.model.Role;
 import com.royalcruise.backend.model.UserAccount;
