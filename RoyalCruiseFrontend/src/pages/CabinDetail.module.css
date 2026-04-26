@@ -1,0 +1,114 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2.5rem;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.imageCol img {
+  width: 100%;
+  border-radius: 1.1rem;
+  object-fit: cover;
+  max-height: 380px;
+}
+
+.infoCol h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.8rem;
+}
+
+.type {
+  margin: 0 0 0.9rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #38bdf8;
+}
+
+.desc {
+  margin: 0 0 1.2rem;
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+.meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.meta p {
+  margin: 0;
+}
+
+.amenities {
+  list-style: none;
+  padding: 0;
+  margin: 0.55rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  column-gap: 1rem;
+  row-gap: 0.65rem;
+  font-size: 0.9rem;
+}
+
+.amenities li {
+  position: relative;
+  padding-left: 0.9rem;
+  line-height: 1.45;
+}
+
+.amenities li::before {
+  content: "•";
+  color: #38bdf8;
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+}
+
+@media (max-width: 640px) {
+  .amenities {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.routesButton {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid #38bdf8;
+  border-radius: 0.65rem;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.routesButton:visited {
+  color: #38bdf8;
+}
+
+.routesButton:hover {
+  background: rgba(56, 189, 248, 0.14);
+  color: #ffffff;
+}

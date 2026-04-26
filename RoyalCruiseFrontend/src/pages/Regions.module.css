@@ -1,0 +1,60 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  color: #e5e7eb;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+.routeTypesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.routeType {
+  font-family: "Segoe UI", sans-serif;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.secondaryPriceRow {
+  margin: 0.28rem 0 0;
+  color: #cbd5e1;
+  font-size: 0.83rem;
+}
+
+.secondaryPriceRow span {
+  color: #e2e8f0;
+  font-weight: 700;
+}
+
+.regionPriceTag {
+  margin-bottom: 0.85rem;
+}
+
+.state,
+.stateError {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.stateError {
+  color: #f87171;
+}

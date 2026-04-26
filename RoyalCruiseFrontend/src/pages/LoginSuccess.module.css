@@ -1,0 +1,105 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.wrapper {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem 2.5rem;
+  color: #e5e7eb;
+}
+
+.container {
+  border-radius: 1rem;
+  border: 1px solid #1e293b;
+  background:
+    linear-gradient(140deg, rgba(15, 23, 42, 0.94), rgba(2, 6, 23, 0.94)),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 48%);
+  padding: 2rem 1.4rem 1.4rem;
+  box-shadow: 0 20px 38px rgba(2, 6, 23, 0.42);
+}
+
+.badge {
+  margin: 0 auto 0.65rem;
+  width: fit-content;
+  padding: 0.32rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  background: rgba(56, 189, 248, 0.12);
+  color: #bae6fd;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.message {
+  margin: 0;
+  text-align: center;
+  color: #f8fafc;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 700;
+}
+
+.subtext {
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin: 0.7rem auto 1.4rem;
+  max-width: 40rem;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.navButton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  text-align: left;
+  padding: 0.95rem 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #1f2937;
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.95));
+  color: #e2e8f0;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navButton:hover {
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 22px rgba(56, 189, 248, 0.12);
+}
+
+.buttonTitle {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.buttonDescription {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #94a3b8;
+}
+
+@media (max-width: 780px) {
+  .wrapper {
+    margin-top: 1.4rem;
+  }
+
+  .container {
+    padding: 1.6rem 1rem 1rem;
+  }
+
+  .buttonGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .subtext {
+    font-size: 0.94rem;
+  }
+}

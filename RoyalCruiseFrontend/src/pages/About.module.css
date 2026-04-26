@@ -1,0 +1,430 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.aboutContainer {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* Hero szekció */
+.heroSection {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(2, 6, 23, 0.95) 100%
+  ),
+  url("https://images.unsplash.com/photo-1553200150-7cb8ff1681e6?w=1200&q=80") center/cover;
+  background-blend-mode: overlay;
+  border-bottom: 1px solid #1f2937;
+}
+
+.heroContent {
+  text-align: center;
+  z-index: 2;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f9fafb;
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  color: #9ca3af;
+}
+
+/* Kontakt szekció */
+.contactSection {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #0f172a 0, #020617 70%);
+  border-bottom: 1px solid #1f2937;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactSection h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #f9fafb;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contactCard {
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 70%);
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contactCard:hover {
+  border-color: #38bdf8;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+}
+
+.icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.contactCard h3 {
+  color: #f9fafb;
+  margin-bottom: 0.5rem;
+}
+
+.contactCard p {
+  margin: 0.5rem 0;
+}
+
+.contactCard a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contactCard a:hover {
+  color: #0ea5e9;
+}
+
+.contactCard small {
+  color: #6b7280;
+}
+
+/* About szekció */
+.aboutSection {
+  padding: 4rem 1rem;
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+}
+
+.aboutSection h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #f9fafb;
+}
+
+.aboutSection p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 70%);
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  border-color: #38bdf8;
+  transform: translateY(-5px);
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Szolgáltatások szekció */
+.servicesSection {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #0f172a 0, #020617 70%);
+  border-bottom: 1px solid #1f2937;
+}
+
+.servicesSection h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #f9fafb;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service {
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 70%);
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.service:hover {
+  border-color: #38bdf8;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.12);
+}
+
+.serviceIcon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.service h3 {
+  color: #f9fafb;
+  margin-bottom: 0.5rem;
+}
+
+.service p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Célpontok szekció */
+.destinationsSection {
+  padding: 4rem 1rem;
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+}
+
+.destinationsSection h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #f9fafb;
+}
+
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.destination {
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 70%);
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.destination:hover {
+  border-color: #38bdf8;
+  transform: translateY(-5px);
+}
+
+.destination h3 {
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.destination p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Nyitva tartás szekció */
+.hoursSection {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #0f172a 0, #020617 70%);
+  border-bottom: 1px solid #1f2937;
+}
+
+.hoursSection h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #f9fafb;
+}
+
+.hoursGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.hour {
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 70%);
+  border: 1px solid #1f2937;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.hour strong {
+  display: block;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.hour span {
+  color: #9ca3af;
+}
+
+/* Biztonság szekció */
+.securitySection {
+  padding: 4rem 1rem;
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+  border-radius: 1rem;
+  margin: 2rem 1rem;
+}
+
+.securitySection h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #f9fafb;
+}
+
+.securityContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.securityItem {
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 70%);
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.securityItem:hover {
+  border-color: #22c55e;
+  transform: translateY(-5px);
+}
+
+.securityItem h3 {
+  color: #f9fafb;
+  margin-bottom: 0.5rem;
+}
+
+.securityItem p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* CTA szekció */
+.ctaSection {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+  border-bottom: 1px solid #1f2937;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f9fafb;
+}
+
+.ctaSection p {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.primaryBtn {
+  background: #0b1120;
+  border: 1px solid #5381d1;
+  color: #e5e7eb;
+}
+
+.primaryBtn:hover {
+  background: #0b1120;
+  border-color: #5381d1;
+  transform: none;
+  box-shadow: 0 8px 16px rgba(83, 129, 209, 0.2);
+}
+
+.secondaryBtn {
+  border: 1px solid #5381d1;
+  color: #e5e7eb;
+  background: transparent;
+}
+
+.secondaryBtn:hover {
+  background: #0b1120;
+  border-color: #5381d1;
+  transform: none;
+}
+
+/* Reszponzív */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .contactSection h2,
+  .aboutSection h2,
+  .servicesSection h2,
+  .destinationsSection h2,
+  .hoursSection h2,
+  .securitySection h2,
+  .ctaSection h2 {
+    font-size: 2rem;
+  }
+
+  .contactGrid,
+  .servicesGrid,
+  .destinationsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,265 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.wrapper {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 0 1rem 2rem;
+  color: #e5e7eb;
+}
+
+.headerCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.headerCard h1 {
+  margin: 0 0 0.2rem;
+  font-size: 1.5rem;
+}
+
+.headerCard p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  color: #e2e8f0;
+}
+
+.bookingHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.bookingHeaderRow h2 {
+  margin: 0;
+}
+
+.bookingFilterSelect {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #334155;
+  border-radius: 0.55rem;
+  background: #0b1120;
+  color: #e2e8f0;
+}
+
+.bookingList {
+  display: grid;
+  gap: 4rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.row span {
+  color: #94a3b8;
+}
+
+.row strong {
+  color: #f8fafc;
+}
+
+.adminInfoRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+}
+
+.adminInfoRow span {
+  color: #94a3b8;
+}
+
+.adminInfoRow strong {
+  color: #f8fafc;
+}
+
+.adminBadge {
+  color: #86efac !important;
+}
+
+.adminAccessBox {
+  margin-top: 0.65rem;
+  padding: 0.8rem 0.85rem;
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.adminAccessBox p {
+  margin: 0 0 0.45rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.adminAccessBox ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #e2e8f0;
+}
+
+.adminAccessBox li + li {
+  margin-top: 0.25rem;
+}
+
+.muted {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.bookingDetails {
+  display: grid;
+  gap: 0;
+  border: 1px solid #64748b;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  background: rgba(2, 6, 23, 0.55);
+  box-shadow: 0 8px 18px rgba(2, 6, 23, 0.32);
+}
+
+.bookingItemHeader {
+  margin-bottom: 0.55rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #334155;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.bookingItemHeader strong {
+  color: #e2e8f0;
+  font-size: 0.92rem;
+}
+
+.bookingItemHeader span {
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.detailToggle {
+  margin-top: 0.65rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #334155;
+  border-radius: 0.55rem;
+  background: #0b1120;
+  color: #e2e8f0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detailToggle:hover {
+  border-color: #38bdf8;
+}
+
+.cancelBookingButton {
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #ef4444;
+  border-radius: 0.55rem;
+  background: #0b1120;
+  color: #fecaca;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancelBookingButton:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: #ef4444;
+}
+
+.cancelBookingButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  border-color: #ef4444;
+  outline: none;
+}
+
+.cancelBookingButton:disabled:hover,
+.cancelBookingButton:disabled:focus,
+.cancelBookingButton:disabled:active {
+  border-color: #ef4444;
+  outline: none;
+}
+
+.actionError {
+  margin: 0 0 0.75rem;
+  color: #fca5a5;
+}
+
+.detailsPanel {
+  margin-top: 0.65rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid #1e293b;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.actionButton:hover {
+  color: #ffffff;
+  background: rgba(56, 189, 248, 0.2);
+}
+
+@media (max-width: 780px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

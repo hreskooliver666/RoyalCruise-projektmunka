@@ -1,0 +1,679 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.heroSection {
+  position: relative;
+  width: 130%;
+  height: 100vh;
+  left: 50%; /* <<< középre igazítjuk */ 
+  transform: translateX(-50%); /* <<< valódi középre helyezés */
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+/* A háttérkép külön div-ben */
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;                 /* <<< szélesebb kép */
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(-50%) scale(1.13);   /* <<< középre igazítva */
+  background-image: url("/assets/images/HajóMain.png");
+  background-size: cover;
+  background-position: center;
+  transition: transform 2s ease;
+  border-radius: inherit;
+  backface-visibility: hidden;
+}
+
+
+/* amikor az oldal betölt → szépen visszazoomol */
+.loaded .heroImage {
+  transform: translateX(-50%) scale(1);
+}
+
+
+/* HOVER – EZ LEGYEN LEGALUL, HOGY FELÜLÍRJA A FENTIT */
+.heroSection:hover .heroImage {
+  transform: translateX(-50%) scale(1.08);
+}
+
+
+/* Sötét overlay */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(2,6,23,0.9));
+  z-index: 1;
+}
+
+/* A szöveg */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 8rem;
+  text-align: center;
+  color: #f9fafb;
+}
+
+
+.title {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #e5e7eb;
+}
+
+/* Foglalási szekció */
+
+.bookingSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.bookingSection h2 {
+  margin-bottom: 0.5rem;
+  color: #f9fafb;
+}
+
+.lead {
+  margin: 0 auto 1.8rem;
+  max-width: 36rem;
+  color: #9ca3af;
+}
+
+.bookingPanel {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Mediterrán útvonalak */
+
+.routesSection {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.routesSection h2 {
+  margin-bottom: 0.5rem;
+  color: #f9fafb;
+}
+
+.routesIntro {
+  margin: 0 auto 1.8rem;
+  max-width: 34rem;
+  color: #9ca3af;
+}
+
+.routeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.routeGrid a {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #38bdf8;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.15s ease;
+}
+
+.routeGrid a:hover {
+  background: #38bdf8;
+  color: #0b1120;
+}
+
+/* Ajánlott utak szekció */
+.recommendedSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.cardGrid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.verticalRouteCard {
+  height: 100%;
+}
+
+.verticalRouteCardLayout {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem;
+  height: 100%;
+}
+
+.verticalRouteCardLayout section {
+  width: 100%;
+}
+
+.verticalLeftColumn {
+  width: 100%;
+}
+
+.verticalRouteTitle {
+  min-height: 2.8rem;
+}
+
+.verticalRouteStops {
+  /* A hosszabb útvonalnevek több sorba törhetnek, így nem lógnak ki a kártyából. */
+  min-height: 2.8rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.centeredRegionLabel {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.verticalMiddleColumn,
+.verticalRightColumn {
+  width: 100%;
+}
+
+.verticalStopScheduleBlock {
+  /* Mindhárom ajánlott kártyán egységesen hosszabb menetrend konténert adunk. */
+  height: 360px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.verticalProgramBlock {
+  min-height: 96px;
+}
+
+.verticalStopScheduleList {
+  flex: 1;
+}
+
+.verticalStopScheduleList li {
+  /* A város és dátum oszlopot rugalmas rácsba tesszük, hogy ne csússzon szét. */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 0.6rem;
+}
+
+.verticalStopScheduleList li span:first-child {
+  /* A hosszú városnevek törhetnek, így biztosan a konténeren belül maradnak. */
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.verticalStopScheduleList li span:last-child {
+  /* A dátum egy sorban marad, hogy végig jobbra igazított oszlopként látszódjon. */
+  white-space: nowrap;
+}
+
+.verticalProgramList {
+  flex: initial;
+}
+
+.verticalInfoRow {
+  min-height: 1.35rem;
+}
+
+.verticalPriceTag {
+  margin-top: auto;
+}
+
+.verticalRightColumn .detailsBtn {
+  align-self: center;
+}
+
+.hiddenTransitBadge {
+  visibility: hidden;
+}
+
+.compactTransitBadge {
+  align-self: flex-start;
+  width: fit-content;
+}
+
+/* Kártya alap */
+.card {
+  background: #0f172a;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid #1e293b;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Kártyák belépési animációja */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.25s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effekt */
+.card:hover,
+.card:active,
+.card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Kép hover zoom */
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img,
+.card:active img,
+.card:focus-visible img {
+  transform: scale(1.04);
+}
+
+/* Szövegek */
+.card h3 {
+  margin: 0.5rem 0;
+  color: #f9fafb;
+}
+
+.card p {
+  color: #94a3b8;
+  margin: 0.2rem 0 0.6rem;
+}
+
+.routeStops {
+  color: #475569;
+}
+
+.shipInfo {
+  color: #bae6fd !important;
+  font-weight: 600;
+}
+
+.stopScheduleBlock {
+  margin: 0.45rem 0 0.6rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #1e293b;
+  border-radius: 0.65rem;
+  background: rgba(2, 6, 23, 0.5);
+  text-align: left;
+}
+
+.stopScheduleTitle {
+  margin: 0 0 0.45rem;
+  color: #7dd3fc;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.card .stopScheduleLead {
+  margin: 0 0 0.55rem;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.card .inTransitBadge {
+  margin: -0.1rem 0 0.55rem;
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #0f766e;
+  background: rgba(15, 118, 110, 0.18);
+  color: #99f6e4;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.stopScheduleList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.stopScheduleList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+.stopScheduleList li span:last-child {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+.seaDayRow {
+  color: #fbbf24;
+  font-style: italic;
+}
+
+.programBlock {
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #1e293b;
+  border-radius: 0.65rem;
+  background: rgba(2, 6, 23, 0.42);
+  text-align: left;
+}
+
+.programTitle {
+  margin: 0 0 0.4rem;
+  color: #7dd3fc;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.programList {
+  margin: 0;
+  padding: 0 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  color: #e2e8f0;
+  font-size: 0.78rem;
+}
+
+.card span {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* További részletek gomb */
+.detailsBtn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #38bdf8;
+  background: transparent;
+  color: #38bdf8;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.detailsBtn:hover {
+  background: #38bdf8;
+  color: #0b1120;
+}
+
+/* A hajó története szekció */
+.storySection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.storyContent h2 {
+  color: #f9fafb;
+  margin-bottom: 1rem;
+}
+
+.storyContent p {
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.storyImageWrapper {
+  width: 100%;
+}
+
+.storyImage {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease;
+}
+
+/* Hover animáció a képre */
+.storyImage:hover,
+.storyImage:active,
+.storyImage:focus-visible {
+  transform: scale(1.03);
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+  .storySection {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .verticalStopScheduleBlock,
+  .verticalProgramBlock,
+  .verticalRouteTitle,
+  .verticalRouteStops {
+    height: auto;
+    min-height: 0;
+  }
+
+  .storyImage {
+    margin-top: 1rem;
+  }
+}
+
+/* GALÉRIA */
+.gallerySection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.gallerySection h2 {
+  color: #f9fafb;
+  margin-bottom: 1.5rem;
+}
+
+.galleryWrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+/* Nyilak */
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  background: rgba(15, 23, 42, 0.6);
+  border: none;
+  color: #f9fafb;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  border-color: rgba(56, 189, 248, 1);
+}
+
+.arrowLeft {
+  left: 10px;
+}
+
+.arrowRight {
+  right: 10px;
+}
+
+/* Pöttyök */
+.dots {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #475569;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.activeDot {
+  background: #38bdf8;
+  transform: scale(1.2);
+}
+
+@media (max-width: 860px) {
+  .heroSection {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+  }
+
+  .heroImage {
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) scale(1.13);
+  }
+
+  .loaded .heroImage {
+    transform: translateX(-50%) scale(1);
+  }
+
+  .heroSection:hover .heroImage,
+  .heroSection:active .heroImage,
+  .heroSection:focus-visible .heroImage {
+    transform: translateX(-50%) scale(1.08);
+  }
+
+  .heroContent {
+    padding-top: 6.2rem;
+  }
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  .galleryWrapper {
+    height: 260px;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    font-size: 1.5rem;
+  }
+}
+
+.routesCtaWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quickCityGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 0.25rem;
+}
+
+.quickCityButton {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #38bdf8;
+  background: #0f172a;
+  color: #e5e7eb;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.quickCityButton:hover,
+.quickCityButton:active,
+.quickCityButton:focus-visible {
+  background: #38bdf8;
+  color: #0b1120;
+}
+
+.routesCtaButton {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  padding: 0.9rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.routesCtaButton:hover,
+.routesCtaButton:active,
+.routesCtaButton:focus-visible {
+  background: #38bdf8;
+  color: #0b1120;
+}
+

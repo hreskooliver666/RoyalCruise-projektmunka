@@ -1,0 +1,89 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+.wrapper {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: #e5e7eb;
+}
+
+.state {
+  text-align: center;
+  color: #e5e7eb;
+  margin-top: 2rem;
+}
+
+.stateError {
+  text-align: center;
+  color: #f87171;
+  margin-top: 2rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #1e293b;
+  padding: 0.65rem;
+  text-align: left;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.table th {
+  color: #93c5fd;
+}
+
+.deleteBtn {
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #7f1d1d;
+  background: #1f2937;
+  color: #fecaca;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  margin: 0;
+}
+
+.deleteBtn:hover {
+  background-color: #dc2626;
+  border-color: #7f1d1d;
+  transform: none;
+}
+
+.deleteBtn:focus {
+  outline: none;
+  border-color: #7f1d1d;
+  transform: none;
+}
+
+.deleteBtn:focus-visible {
+  outline: none;
+  border-color: #7f1d1d;
+  transform: none !important;
+}
+
+.deleteBtn:active {
+  outline: none;
+  border-color: #7f1d1d;
+  transform: none !important;
+}
+
+.deleteBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #111827;
+}
