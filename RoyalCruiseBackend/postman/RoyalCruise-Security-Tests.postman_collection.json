@@ -1,0 +1,381 @@
+{
+  "info": {
+    "name": "RoyalCruise Security Authorization Tests",
+    "description": "Validates JWT authentication and role-based authorization rules after security refactoring",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Setup: Login as Regular User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "if (pm.response.code === 200) {",
+              "    const responseBody = pm.response.json();",
+              "    // A tokent ket scope-ban mentjuk, hogy runner es manual futtatas kozott se vesszen el.",
+              "    pm.environment.set('userToken', responseBody.token);",
+              "    pm.collectionVariables.set('userToken', responseBody.token);",
+              "    pm.environment.set('userEmail', responseBody.user.email);",
+              "    pm.collectionVariables.set('userEmail', responseBody.user.email);",
+              "    console.log('User token saved: ' + responseBody.user.email);",
+              "}",
+              "",
+              "pm.test('Login successful - User token obtained', function() {",
+              "    pm.response.to.have.status(200);",
+              "    pm.expect(pm.response.json().token).to.be.a('string');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@royalcruise.local\",\n  \"password\": \"User-PASSWORD-123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Setup: Login as Admin User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "if (pm.response.code === 200) {",
+              "    const responseBody = pm.response.json();",
+              "    // Az admin tokent is ket helyre mentjuk, hogy biztosan feloldodjon a {{adminToken}} valtozo.",
+              "    pm.environment.set('adminToken', responseBody.token);",
+              "    pm.collectionVariables.set('adminToken', responseBody.token);",
+              "    pm.environment.set('adminEmail', responseBody.user.email);",
+              "    pm.collectionVariables.set('adminEmail', responseBody.user.email);",
+              "    console.log('Admin token saved: ' + responseBody.user.email);",
+              "}",
+              "",
+              "pm.test('Admin login successful - Admin token obtained', function() {",
+              "    pm.response.to.have.status(200);",
+              "    pm.expect(pm.response.json().token).to.be.a('string');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@royalcruise.local\",\n  \"password\": \"Admin-SZIKSZI\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 1: Public Endpoint - GET /api/routes (No Auth Required)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('✓ Public endpoint accessible without authentication', function() {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('✓ Response contains routes array', function() {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/routes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "routes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 2: Protected Endpoint - GET /api/bookings/me (No Token = 401)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('✗ Protected endpoint rejects request without token', function() {",
+              "    pm.response.to.have.status(401);",
+              "});",
+              "",
+              "pm.test('✓ Response contains error message', function() {",
+              "    pm.expect(pm.response.json().message).to.exist;",
+              "    console.log('Error message: ' + pm.response.json().message);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/bookings/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "me"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 3: Protected Endpoint - GET /api/bookings/me (With USER Token = 200)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('✓ Protected endpoint accepts user with valid token', function() {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('✓ Response contains user bookings data', function() {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "    console.log('User has ' + pm.response.json().length + ' bookings');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{userToken}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/bookings/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "me"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 4: Admin Endpoint - GET /api/admin/users (USER Token = 403)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('✗ Admin endpoint rejects regular user (403 Forbidden)', function() {",
+              "    pm.response.to.have.status(403);",
+              "});",
+              "",
+              "pm.test('✓ Response explains access denied', function() {",
+              "    pm.expect(pm.response.json().message).to.exist;",
+              "    console.log('Access denied reason: ' + pm.response.json().message);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{userToken}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/admin/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "admin",
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 5: Admin Endpoint - GET /api/admin/users (ADMIN Token = 200)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('✓ Admin endpoint accepts admin user with valid token', function() {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('✓ Admin token variable is populated before request', function() {",
+              "    const token = pm.environment.get('adminToken') || pm.collectionVariables.get('adminToken');",
+              "    pm.expect(token, 'adminToken should not be empty').to.be.a('string').and.to.have.length.greaterThan(20);",
+              "});",
+              "",
+              "pm.test('✓ Response contains admin users list', function() {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "    console.log('Found ' + pm.response.json().length + ' users');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/admin/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "admin",
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Bonus: Invalid Token - GET /api/bookings/me (Bad Token = 401)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('✗ Endpoint rejects invalid/malformed token', function() {",
+              "    pm.response.to.have.status(401);",
+              "});",
+              "",
+              "pm.test('✓ Error message indicates token issue', function() {",
+              "    const response = pm.response.json();",
+              "    pm.expect(response.message).to.include.oneOf(['token', 'Unauthorized', 'invalid', 'Invalid']);",
+              "    console.log('Token validation error: ' + response.message);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer invalid.token.here"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/bookings/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "me"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "userToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "adminToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "userEmail",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "adminEmail",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
