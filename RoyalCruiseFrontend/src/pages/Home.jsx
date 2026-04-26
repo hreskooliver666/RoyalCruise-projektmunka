@@ -83,6 +83,10 @@ export default function Home() {
 
   // Ez a galéria képlistája, amelyet a nyitóoldali látványszekció lapozható formában jelenít meg.
   const galleryImages = [
+    "/assets/images/Hajó5.png",
+    "/assets/images/Hajó6.png",
+    "/assets/images/Hajó3.png",
+    "/assets/images/Hajó4.png",
     "/assets/images/Hajó1.png",
     "/assets/images/Hajó2.png",
     "/assets/images/Fedelzeti1.png",
