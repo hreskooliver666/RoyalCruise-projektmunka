@@ -185,18 +185,18 @@ export default function Home() {
             {/* A hajó története */}
 <section className={classes.storySection}>
   <div className={classes.storyContent}>
-    <h2>A hajó története</h2>
+    <h2>A hajók története</h2>
     <p>
-      A RoyalCruise zászlóshajója több mint egy évtizede szeli a világ óceánjait,
-      és már első útjai óta a luxus, a kényelem és a modern hajózás szimbóluma.
-      A hajó tervezésekor a mérnökök célja az volt, hogy egy olyan úszó várost
+      A RoyalCruise zászlóshajói több mint egy évtizede szelik a világ óceánjait,
+      és már első útjaik óta a luxus, a kényelem és a modern hajózás szimbólumai.
+      A hajók tervezésekor a mérnökök célja az volt, hogy egy olyan úszó várost
       hozzanak létre, ahol a vendégek egyszerre élvezhetik a tenger végtelen
-      nyugalmát és a szárazföldi szállodák kényelmét. A fedélzeten található
+      nyugalmát és a szárazföldi szállodák kényelmét. A fedélzeteken található
       luxus éttermek, tágas medencék és elegáns kabinok mind azt a célt
       szolgálják, hogy az utazók valóban felejthetetlen élményekkel térjenek
-      haza. A RoyalCruise hajója ma már több kontinens kikötőit köti össze,
-      miközben minden útján megőrzi azt a különleges hangulatot, amely miatt
-      utasai újra és újra visszatérnek.
+      haza. A RoyalCruise hajói ma már több kontinens kikötőit kötik össze,
+      miközben minden útján megőrzik azt a különleges hangulatot, amely miatt
+      utasaik újra és újra visszatérnek.
     </p>
   </div>
 
@@ -213,7 +213,7 @@ export default function Home() {
       <section className={classes.bookingSection}>
         <h2>Foglalj kabint az óceánra néző szobák egyikébe</h2>
         <p className={classes.lead}>
-          Válassz belső, tengerre néző, erkélyes kabinok vagy luxus lakosztályok közül,
+          Válassz tengerre néző, erkélyes kabinok vagy luxus lakosztályok közül,
           és intézd a foglalást online, pár kattintással.
         </p>
         <div className={classes.bookingPanel}>
