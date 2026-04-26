@@ -1,0 +1,41 @@
+# Logs
+# Általános log könyvtár.
+logs
+# Bármely .log kiterjesztésű fájl.
+*.log
+# npm hibalog minták.
+npm-debug.log*
+# yarn hibalog minták.
+yarn-debug.log*
+yarn-error.log*
+# pnpm hibalog minták.
+pnpm-debug.log*
+# lerna hibalog minták.
+lerna-debug.log*
+
+# Telepített függőségek lokális mappája.
+node_modules
+# Vite build output (újragenerálható).
+dist
+# SSR build output (ha készül ilyen).
+dist-ssr
+# Gépspecifikus lokális configok.
+*.local
+# Korábban véletlenül commitolt, hash-elt build artifactok a public mappában.
+public/assets/index-*.js
+public/assets/index-*.css
+
+# Editor directories and files
+# VS Code lokális projektbeállítások (kivéve engedélyezett extension lista).
+.vscode/*
+!.vscode/extensions.json
+# IntelliJ/JetBrains projekt metaadatok.
+.idea
+# macOS rendszerfájl.
+.DS_Store
+# Visual Studio / Windows-specifikus ideiglenes fájlok.
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

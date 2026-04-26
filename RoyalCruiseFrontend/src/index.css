@@ -1,0 +1,181 @@
+﻿/* Ez a stíluslap a hozzá tartozó frontend felület megjelenését szabályozza. */
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  background-color: #020617;
+  color: #e5e7eb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, 
+*::before, 
+*::after { 
+  box-sizing: border-box; 
+}
+
+a {
+  font-weight: 500;
+  color: #38bdf8;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #7dd3fc;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a 0, #020617 55%);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;      /* <<< KÖZÉPRE HOZZA AZ EGÉSZ OLDALT */
+  padding: 2rem 1.5rem;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #38bdf8;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #0ea5e9;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    font-size: 14px;
+  }
+
+  main {
+    padding: 1rem 0.85rem;
+  }
+
+  h1 {
+    font-size: clamp(1.45rem, 6.2vw, 1.95rem) !important;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 5.2vw, 1.5rem) !important;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 4.2vw, 1.2rem) !important;
+    line-height: 1.3;
+  }
+
+  p,
+  li,
+  label,
+  a,
+  span {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  main img {
+    max-width: 94vw;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    font-size: 13px;
+  }
+
+  main {
+    padding: 0.85rem 0.62rem;
+  }
+
+  p,
+  li,
+  label,
+  a,
+  span,
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 0.88rem;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  main img {
+    max-width: 92vw;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    font-size: 12px;
+  }
+
+  main {
+    padding: 0.7rem 0.5rem;
+  }
+
+  h1 {
+    font-size: clamp(1.25rem, 7.2vw, 1.55rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.08rem, 6vw, 1.3rem) !important;
+  }
+
+  main img {
+    max-width: 90vw;
+  }
+}

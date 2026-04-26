@@ -1,0 +1,43 @@
+{
+  "name": "royalcruise",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:unit": "vitest --run",
+    "test:unit:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "selenium:serve": "vite --host 127.0.0.1 --port 4173 --strictPort",
+    "test:selenium": "start-server-and-test selenium:serve http://127.0.0.1:4173 \"node --test --test-concurrency=1 selenium/tests/**/*.test.mjs\""
+  },
+  "dependencies": {
+    "react": "^18.1.1",
+    "react-dom": "^18.1.1",
+    "react-router-dom": "^7.13.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "@vitest/ui": "^1.0.4",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "jsdom": "^29.0.2",
+    "selenium-webdriver": "^4.30.0",
+    "start-server-and-test": "^2.0.8",
+    "vite": "^7.1.7",
+    "vitest": "^1.0.4"
+  }
+}
